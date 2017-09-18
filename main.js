@@ -11,35 +11,37 @@ $(function(){
     resetPrevSquare();
     if(event.keyCode==38)//up
     {
-        var s =(currentPosR-=1);
-        var t =(currentPosC);
+        var s = currentPosR;
+        var t = currentPosC;        
+        if(checkBorderR(currentPosR-1)){s = currentPosR-=1;}
         $("#"+s+"-"+t).css("background-color","red");
     }
     else if(event.keyCode==40)//down
     {
-        var s =(currentPosR+=1);
-        var t =(currentPosC);
+        var s = currentPosR;
+        var t = currentPosC;
+        if(checkBorderR(currentPosR+1)){s=currentPosR+=1;}
         $("#"+s+"-"+t).css("background-color","red");
       
     }
     else if(event.keyCode==37)//left
     {
-        var s =(currentPosR);
-        var t =(currentPosC-=1);
+        var s = currentPosR;
+        var t = currentPosC;
+        if(checkBorderC(currentPosC-1)){t = currentPosC-=1;}
         $("#"+s+"-"+t).css("background-color","red");
       
     }
     else if(event.keyCode==39)//right
     {
-        var s =(currentPosR);
-        var t =(currentPosC+=1);
+        var s = currentPosR;
+        var t = currentPosC;
+        if(checkBorderC(currentPosC+1)){t = currentPosC+=1;}
         $("#"+s+"-"+t).css("background-color","red");   
     }
   });
 
 });
-
-
 
 function characterInit(){
   $("#18-7").css("background-color","red");
@@ -71,12 +73,27 @@ function drawGame(){
   $("#gameBoard").html(boardstr);
 }
 
-function checkBorder(){
-
-  
+function checkBorderR(num){
+  if(num<19&&num>=0)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
 }
 
-
+function checkBorderC(num){
+  if(num<15&&num>=0)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
 
 
 
