@@ -8,39 +8,32 @@ $(function(){
   drawGame();
   characterInit();
   $(document).keydown(function(event){
-
+    resetPrevSquare();
     if(event.keyCode==38)//up
     {
-        resetPrevSquare();
-        var s =""+(currentPosR-=1);
-        var t =""+(currentPosC);
+        var s =(currentPosR-=1);
+        var t =(currentPosC);
         $("#"+s+"-"+t).css("background-color","red");
     }
     else if(event.keyCode==40)//down
     {
-        resetPrevSquare();
-        var s =""+(currentPosR+=1);
-        var t =""+(currentPosC);
+        var s =(currentPosR+=1);
+        var t =(currentPosC);
         $("#"+s+"-"+t).css("background-color","red");
       
     }
     else if(event.keyCode==37)//left
     {
-      
-        resetPrevSquare();
-        var s =""+(currentPosR);
-        var t =""+(currentPosC-=1);
+        var s =(currentPosR);
+        var t =(currentPosC-=1);
         $("#"+s+"-"+t).css("background-color","red");
       
     }
     else if(event.keyCode==39)//right
     {
-        
-        resetPrevSquare();
-        var s =""+(currentPosR);
-        var t =""+(currentPosC+=1);
-        $("#"+s+"-"+t).css("background-color","red");
-    
+        var s =(currentPosR);
+        var t =(currentPosC+=1);
+        $("#"+s+"-"+t).css("background-color","red");   
     }
   });
 
@@ -54,9 +47,6 @@ function characterInit(){
   currentPosC=7;
 }
 
-function move(){
-
-}
 
 function resetPrevSquare(){
   var s =""+currentPosR;
@@ -64,8 +54,6 @@ function resetPrevSquare(){
   $("#"+s+"-"+t).css("background-color","transparent");
 }
 
-function checkBorder(){
-}
 
 function drawGame(){
   var gWidth = 15;
@@ -83,6 +71,10 @@ function drawGame(){
   $("#gameBoard").html(boardstr);
 }
 
+function checkBorder(){
+
+  
+}
 
 
 
