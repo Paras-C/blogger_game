@@ -64,8 +64,6 @@ function characterInit(){
   $("#18-7").css("background-color","red");
   currentPosR=18;
   currentPosC=7;
-  
-
 }
 
 
