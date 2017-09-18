@@ -48,6 +48,10 @@ function play()
         $("#"+s+"-"+t).css("background-color","red");
 
     }
+    else
+    {
+      $("#"+s+"-"+t).css("background-color","red");
+    }
   if(checkWin())
     {
       characterInit();
