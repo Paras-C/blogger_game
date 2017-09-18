@@ -12,6 +12,8 @@ var e6=14;
 var e7=14;
 var e8=14;
 var e9=14;
+
+var points=0;
 $(function(){
   play();
 });
@@ -20,7 +22,7 @@ function play()
 {
   drawGame();
   characterInit();
-  $(document).keydown(function(event){
+  $(document).on("keyup",function(event){
     resetPrevSquare();
     var s = currentPosR;
     var t = currentPosC;
@@ -46,7 +48,12 @@ function play()
         $("#"+s+"-"+t).css("background-color","red");
 
     }
-  if(checkWin()){characterInit();console.log("You Win");} 
+  if(checkWin())
+    {
+      characterInit();
+      points +=10;
+      console.log("Points: " + points);
+    } 
   });  
   enemies();
 }
@@ -236,7 +243,8 @@ function enemies(){
 }
 
 function gameOver(){
-  alert("GAME OVER");
+  alert("GAME OVER!!! \n" + "Final Score: " + points);
+  location.reload();
 }
 
 function checkWin(){
