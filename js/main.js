@@ -13,13 +13,17 @@ var e7=14;
 var e8=14;
 var e9=14;
 $(function(){
+  play();
+});
 
+function play()
+{
   drawGame();
   characterInit();
   $(document).keydown(function(event){
     resetPrevSquare();
     var s = currentPosR;
-    var t = currentPosC; 
+    var t = currentPosC;
     if(event.keyCode==38)//up
     {
         if(checkBorderR(currentPosR-1)){s = currentPosR-=1;}
@@ -39,10 +43,14 @@ $(function(){
     else if(event.keyCode==39)//right
     {
         if(checkBorderC(currentPosC+1)){t = currentPosC+=1;}
-        $("#"+s+"-"+t).css("background-color","red");   
-    }});  
+        $("#"+s+"-"+t).css("background-color","red");
+
+    }
+  if(checkWin()){characterInit();console.log("You Win");} 
+  });  
   enemies();
-});
+}
+
 
 function characterInit(){
   $("#18-7").css("background-color","red");
@@ -230,6 +238,15 @@ function gameOver(){
   alert("GAME OVER");
 }
 
-
+function checkWin(){
+  if(currentPosR===1&&currentPosC===7)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
 
 
