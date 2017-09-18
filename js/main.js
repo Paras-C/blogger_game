@@ -53,6 +53,7 @@ function play()
 
 
 function characterInit(){
+  $("#1-7").css("background-color","transparent");
   $("#18-7").css("background-color","red");
   currentPosR=18;
   currentPosC=7;
