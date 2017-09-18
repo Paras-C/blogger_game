@@ -47,5 +47,15 @@ td{
 
 }
 
+#internetCafe{
+  height:130px;
+  width: 650px;
+}
+
+#cafe{
+  align-items: center;
+  display: table;
+  margin: 0 auto;
+}
 
 
