@@ -1,0 +1,46 @@
+#game{
+  display: table;
+  margin: 0 auto;
+}
+table tr td{
+  height: 40px;
+  width: 40px;
+  z-index: 10;
+}
+
+td{
+  border: 1px solid black;
+  padding: 0;
+}
+
+#bgDiv{
+  display: table;
+  margin: 0 auto;
+  position: fixed;
+  border: 1px solid black;
+  z-index: -1;
+}
+.size1{
+  height: 44px;
+  width: 660px;
+  /*border: 1px solid black;*/
+}
+.size2{
+  height: 88px;
+  width: 660px;
+  /*border: 1px solid black;*/
+}
+.size3{
+  height: 132px;
+  width: 660px;
+  /*border: 1px solid black;*/
+}
+.grass{
+  background-color: #2d9e67;
+}
+.road{
+  background-color: #233444;
+}
+
+
+

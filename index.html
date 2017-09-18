@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Frogger Test Game</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Blogger Game</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 <h1>Main Game Table</h1>
+  <div id="game">
+    <div id="bgDiv"> 
+      <div id="goal" class="size3 grass"></div>
+      <div id="road1" class="size2 road"></div>
+      <div id="grass1" class="size2 grass"></div>
+      <div id="road2" class="size3 road"></div>
+      <div id="grass2" class="size1 grass"></div>
+      <div id="road3" class="size1 road"></div>
+      <div id="grass3" class="size2 grass"></div>
+      <div id="road4" class="size3 road"></div>
+      <div id="grass4" class="size2 grass"></div>
+    </div>
 
-  <div id ="mainGame">
-  <table border="1" id="gameBoard">
-  </table>
+    <div id ="mainGame">
+      <table id="gameBoard">
+      </table>
+    </div>
   </div>
 
 </body>

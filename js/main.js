@@ -9,33 +9,26 @@ $(function(){
   characterInit();
   $(document).keydown(function(event){
     resetPrevSquare();
+    var s = currentPosR;
+    var t = currentPosC; 
     if(event.keyCode==38)//up
     {
-        var s = currentPosR;
-        var t = currentPosC;        
         if(checkBorderR(currentPosR-1)){s = currentPosR-=1;}
         $("#"+s+"-"+t).css("background-color","red");
     }
     else if(event.keyCode==40)//down
     {
-        var s = currentPosR;
-        var t = currentPosC;
         if(checkBorderR(currentPosR+1)){s=currentPosR+=1;}
         $("#"+s+"-"+t).css("background-color","red");
       
     }
     else if(event.keyCode==37)//left
     {
-        var s = currentPosR;
-        var t = currentPosC;
         if(checkBorderC(currentPosC-1)){t = currentPosC-=1;}
-        $("#"+s+"-"+t).css("background-color","red");
-      
+        $("#"+s+"-"+t).css("background-color","red");  
     }
     else if(event.keyCode==39)//right
     {
-        var s = currentPosR;
-        var t = currentPosC;
         if(checkBorderC(currentPosC+1)){t = currentPosC+=1;}
         $("#"+s+"-"+t).css("background-color","red");   
     }
