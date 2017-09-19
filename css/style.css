@@ -2,6 +2,7 @@
   display: table;
   margin: 0 auto;
   /*position: fixed;*/
+  border: 5px solid black;
 }
 table tr td{
   height: 40px;
@@ -15,6 +16,8 @@ h1{
 td{
   border: 1px solid transparent;
   padding: 0;
+  background-size: 30px;
+  background-repeat: no-repeat;
 }
 
 #bgDiv{

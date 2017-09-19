@@ -1,8 +1,6 @@
 var currentPosR;
 var currentPosC;
 
-var prePosR;
-var prePosC;
 var e1=14;
 var e2=14;
 var e3=14;
@@ -14,7 +12,9 @@ var e8=14;
 var e9=14;
 
 var points=0;
-$(function(){
+
+$(function()
+{
   play();
 });
 
@@ -29,28 +29,28 @@ function play()
     if(event.keyCode==38)//up
     {
         if(checkBorderR(currentPosR-1)){s = currentPosR-=1;}
-        $("#"+s+"-"+t).css("background-color","red");
+        $("#"+s+"-"+t).css('background-image', 'url("images/forward.png")');
     }
     else if(event.keyCode==40)//down
     {
         if(checkBorderR(currentPosR+1)){s=currentPosR+=1;}
-        $("#"+s+"-"+t).css("background-color","red");
+        $("#"+s+"-"+t).css('background-image', 'url("images/back.png")');
       
     }
     else if(event.keyCode==37)//left
     {
         if(checkBorderC(currentPosC-1)){t = currentPosC-=1;}
-        $("#"+s+"-"+t).css("background-color","red");  
+        $("#"+s+"-"+t).css('background-image', 'url("images/left.png")');  
     }
     else if(event.keyCode==39)//right
     {
         if(checkBorderC(currentPosC+1)){t = currentPosC+=1;}
-        $("#"+s+"-"+t).css("background-color","red");
+        $("#"+s+"-"+t).css('background-image', 'url("images/right.png")');
 
     }
     else
     {
-      $("#"+s+"-"+t).css("background-color","red");
+      $("#"+s+"-"+t).css('background-image', 'url("images/forward.png")');
     }
   if(checkWin())
     {
@@ -58,14 +58,14 @@ function play()
       points +=10;
       console.log("Points: " + points);
     } 
-  });  
+  });
   enemies();
 }
 
 
 function characterInit(){
-  $("#1-7").css("background-color","transparent");
-  $("#18-7").css("background-color","red");
+  $("#1-7").css('background-image',"");
+  $("#18-7").css('background-image', 'url("images/forward.png")').css('background-image',"5px 5px");
   currentPosR=18;
   currentPosC=7;
 }
@@ -74,7 +74,7 @@ function characterInit(){
 function resetPrevSquare(){
   var s =""+currentPosR;
   var t =""+currentPosC;
-  $("#"+s+"-"+t).css("background-color","transparent");
+  $("#"+s+"-"+t).css("background-image","");
 }
 
 
@@ -187,11 +187,11 @@ function enemies(){
     {
       e5 = 14;
     }
-  },200);
+  },125);
   //Enemy 6
     setInterval(function(){
     var pos1 = 8;
-    var pos2 = e8;
+    var pos2 = e6;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}      
     if($("#8-"+(e6)).css("background-color")=="red"){gameOver();}
     $("#8-"+(e6+1)).css("background-color","transparent");
@@ -259,5 +259,4 @@ function checkWin(){
     return false;
   }
 }
-
 
