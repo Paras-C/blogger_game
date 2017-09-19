@@ -65,7 +65,7 @@ function play()
 
 function characterInit(){
   $("#1-7").css('background-image',"");
-  $("#18-7").css('background-image', 'url("images/forward.png")').css('background-image',"5px 5px");
+  $("#18-7").css('background-image', 'url("images/forward.png")');
   currentPosR=18;
   currentPosC=7;
 }
@@ -123,8 +123,8 @@ function enemies(){
     var pos2 = e1;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}
     if($("#16-"+(e1)).css("background-color")=="red"){gameOver();}
-    $("#16-"+(e1+1)).css("background-color","transparent");
-    $("#16-"+(e1)).css("background-color","green");
+    $("#16-"+(e1+1)).css('background-image',"");
+    $("#16-"+(e1)).css('background-image', 'url("images/red-car.png")');
     e1--;
     if(e1<-1)
     {
@@ -138,8 +138,8 @@ function enemies(){
     var pos2 = e2;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}
     if($("#15-"+(e2)).css("background-color")=="red"){gameOver();}
-    $("#15-"+(e2+1)).css("background-color","transparent");
-    $("#15-"+(e2)).css("background-color","green");
+    $("#15-"+(e2+1)).css('background-image',"");
+    $("#15-"+(e2)).css('background-image', 'url("images/pink-car.png")');
     e2--;
     if(e2<-1)
     {
@@ -152,8 +152,8 @@ function enemies(){
     var pos2 = e3;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}
     if($("#14-"+(e3)).css("background-color")=="red"){gameOver();}
-    $("#14-"+(e3+1)).css("background-color","transparent");
-    $("#14-"+(e3)).css("background-color","green");
+    $("#14-"+(e3+1)).css('background-image',"");
+    $("#14-"+(e3)).css('background-image', 'url("images/blue-car.png")');
     e3--;
     if(e3<-1)
     {
@@ -166,8 +166,8 @@ function enemies(){
     var pos2 = e4;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}
     if($("#11-"+(e4)).css("background-color")=="red"){gameOver();}
-    $("#11-"+(e4+1)).css("background-color","transparent");
-    $("#11-"+(e4)).css("background-color","green");
+    $("#11-"+(e4+1)).css('background-image',"");
+    $("#11-"+(e4)).css('background-image', 'url("images/pink-car.png")');
     e4--;
     if(e4<-1)
     {
@@ -180,8 +180,8 @@ function enemies(){
     var pos2 = e5;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}
     if($("#9-"+(e5)).css("background-color")=="red"){gameOver();}
-    $("#9-"+(e5+1)).css("background-color","transparent");
-    $("#9-"+(e5)).css("background-color","green");
+    $("#9-"+(e5+1)).css('background-image',"");
+    $("#9-"+(e5)).css('background-image', 'url("images/red-car.png")');
     e5--;
     if(e5<-1)
     {
@@ -194,8 +194,8 @@ function enemies(){
     var pos2 = e6;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}      
     if($("#8-"+(e6)).css("background-color")=="red"){gameOver();}
-    $("#8-"+(e6+1)).css("background-color","transparent");
-    $("#8-"+(e6)).css("background-color","green");
+    $("#8-"+(e6+1)).css('background-image',"");
+    $("#8-"+(e6)).css('background-image', 'url("images/pink-car.png")');
     e6--;
     if(e6<-1)
     {
@@ -208,8 +208,8 @@ function enemies(){
     var pos2 = e7;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}      
     if($("#7-"+(e7)).css("background-color")=="red"){gameOver();}
-    $("#7-"+(e7+1)).css("background-color","transparent");
-    $("#7-"+(e7)).css("background-color","green");
+    $("#7-"+(e7+1)).css('background-image',"");
+    $("#7-"+(e7)).css('background-image', 'url("images/blue-car.png")');
     e7--;
     if(e7<-1)
     {
@@ -221,8 +221,8 @@ function enemies(){
     var pos1 = 4;
     var pos2 = e8;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}
-    $("#4-"+(e8+1)).css("background-color","transparent");
-    $("#4-"+(e8)).css("background-color","green");
+    $("#4-"+(e8+1)).css('background-image',"");
+    $("#4-"+(e8)).css('background-image', 'url("images/red-car.png")');
     e8--;
     if(e8<-1)
     {
@@ -234,8 +234,8 @@ function enemies(){
     var pos1 = 3;
     var pos2 = e9;
     if(currentPosR==pos1&&currentPosC==pos2){gameOver();}
-    $("#3-"+(e9+1)).css("background-color","transparent");
-    $("#3-"+(e9)).css("background-color","green");
+    $("#3-"+(e9+1)).css('background-image',"");
+    $("#3-"+(e9)).css('background-image', 'url("images/pink-car.png")');
     e9--;
     if(e9<-1)
     {
