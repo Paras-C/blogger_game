@@ -19,6 +19,8 @@ td{
   padding: 0;
   background-size: 40px;
   background-repeat: no-repeat;
+/*  border: 1px solid black;*/
+
 }
 table{
   position: relative;
@@ -53,7 +55,7 @@ table{
 }
 .road{
   background-image: url("../images/road2.jpg");
-  background-size: 40px 40px;
+  background-size: 40px 46px;
 
 }
 
