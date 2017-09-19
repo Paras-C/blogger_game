@@ -32,24 +32,50 @@ function play()
     if(event.keyCode==38)//up
     {
         if(checkBorderR(currentPosR-1)){s = currentPosR-=1;}
-        $("#"+s+"-"+t).css('background-image', 'url("images/forward.png")');
+        if($("#"+s+"-"+t).css("background-image")=="none")
+        {
+          $("#"+s+"-"+t).css('background-image', 'url("images/forward.png")');
+        }
+        else
+        {
+          loseLife();
+        }
     }
     else if(event.keyCode==40)//down
     {
         if(checkBorderR(currentPosR+1)){s=currentPosR+=1;}
-        $("#"+s+"-"+t).css('background-image', 'url("images/back.png")');
-      
+        if($("#"+s+"-"+t).css("background-image")=="none")
+        {        
+          $("#"+s+"-"+t).css('background-image', 'url("images/back.png")');
+        }
+        else
+        {
+          loseLife();
+        }      
     }
     else if(event.keyCode==37)//left
     {
         if(checkBorderC(currentPosC-1)){t = currentPosC-=1;}
-        $("#"+s+"-"+t).css('background-image', 'url("images/left.png")');  
+        if($("#"+s+"-"+t).css("background-image")=="none")
+        {           
+          $("#"+s+"-"+t).css('background-image', 'url("images/left.png")');  
+        }
+        else
+        {
+          loseLife();
+        }
     }
     else if(event.keyCode==39)//right
     {
         if(checkBorderC(currentPosC+1)){t = currentPosC+=1;}
-        $("#"+s+"-"+t).css('background-image', 'url("images/right.png")');
-
+        if($("#"+s+"-"+t).css("background-image")=="none")
+        {   
+          $("#"+s+"-"+t).css('background-image', 'url("images/right.png")');
+        }
+        else
+        {
+          loseLife();
+        }
     }
     else
     {
@@ -125,7 +151,7 @@ function enemies(){
     var pos1 = 16;
     var pos2 = e1;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    if($("#16-"+(e1)).css("background-color")=="red"){loseLife();}
+    // if($("#16-"+(e1)).css("background-color")=="red"){loseLife();}
     $("#16-"+(e1+1)).css('background-image',"");
     $("#16-"+(e1)).css('background-image', 'url("images/red-car.png")');
     e1--;
