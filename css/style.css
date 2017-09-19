@@ -8,6 +8,7 @@ table tr td{
   height: 40px;
   width: 40px;
   z-index: 10;
+  /*display:none;*/
 }
 h1{
   display: table;
@@ -53,16 +54,56 @@ td{
 
 }
 
-#internetCafe{
+#topBar{
   height:130px;
   width: 650px;
 }
+/*Lives Stuff*/
+#livesInfo{
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+#hearts{
+  display: inline-block;
+  padding-bottom: 20px;
+}
+#hearts img{
+  height: 40px;
+  width: 40px;
+}
+#lifeText{
+  color: white;
+  font-size: 30px;
+  margin:0;
+}
+
+/*Cafe Stuff*/
+#cafeImage{
+  display: inline-block;
+  margin: 0 auto;
+}
 
 #cafe{
-  align-items: center;
-  display: table;
-  margin: 0 auto;
-  z-index: 10;
+  position: absolute;
+  left: 290px;
+}
+
+/*Score Stuff*/
+#scoreTitle{
+  display: inline-block;
+  position: absolute;
+  
+  right:50px;
+  top: 3px;
+}
+
+#score{
+  color: white;
+  font-size: 30px;
+  padding-left: 120px;
+  display: inline-block;
 }
 
 
