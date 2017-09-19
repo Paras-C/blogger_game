@@ -1,8 +1,27 @@
+#everything{
+/*  display: table;
+  margin: 0 auto;*/
+  position: absolute;
+  left:300px;
+}
+#instructions{
+  height:550px;
+  width:300px;
+  background-color: black;
+  display: inline-block;
+  padding: 0;
+
+}
+#instructions p{
+  font-size: 20px;
+  color: white;
+  padding-left: 5px;
+}
 #game{
-  display: table;
-  margin: 0 auto;
-  /*position: fixed;*/
+  /*position: abosolute*/
   border: 5px solid black;
+  display: inline-block;
+  
 }
 table tr td{
   height: 40px;
