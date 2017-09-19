@@ -11,7 +11,7 @@ var e7=14;
 var e8=14;
 var e9=14;
 
-var points=0;
+var points = 0;
 
 var life = 3;
 
@@ -20,8 +20,7 @@ $(function()
   play();
 });
 
-function play()
-{
+function play(){
   drawGame();
   characterInit();
   $("#scoreTitle").html("<p id='score'>Score: "+points+"</p>");
@@ -85,7 +84,7 @@ function play()
     {
       characterInit();
       points +=10;
-      $("#score").html("Score:"+points);
+      $("#score").html("Score: "+points);
     } 
   });
   enemies();
@@ -151,7 +150,6 @@ function enemies(){
     var pos1 = 16;
     var pos2 = e1;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    // if($("#16-"+(e1)).css("background-color")=="red"){loseLife();}
     $("#16-"+(e1+1)).css('background-image',"");
     $("#16-"+(e1)).css('background-image', 'url("images/red-car.png")');
     e1--;
@@ -166,7 +164,6 @@ function enemies(){
     var pos1 = 15;
     var pos2 = e2;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    if($("#15-"+(e2)).css("background-color")=="red"){loseLife();}
     $("#15-"+(e2+1)).css('background-image',"");
     $("#15-"+(e2)).css('background-image', 'url("images/pink-car.png")');
     e2--;
@@ -180,7 +177,6 @@ function enemies(){
     var pos1 = 14;
     var pos2 = e3;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    if($("#14-"+(e3)).css("background-color")=="red"){loseLife();}
     $("#14-"+(e3+1)).css('background-image',"");
     $("#14-"+(e3)).css('background-image', 'url("images/blue-car.png")');
     e3--;
@@ -194,7 +190,6 @@ function enemies(){
     var pos1 = 11;
     var pos2 = e4;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    if($("#11-"+(e4)).css("background-color")=="red"){loseLife();}
     $("#11-"+(e4+1)).css('background-image',"");
     $("#11-"+(e4)).css('background-image', 'url("images/pink-car.png")');
     e4--;
@@ -208,7 +203,6 @@ function enemies(){
     var pos1 = 9;
     var pos2 = e5;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    if($("#9-"+(e5)).css("background-color")=="red"){loseLife();}
     $("#9-"+(e5+1)).css('background-image',"");
     $("#9-"+(e5)).css('background-image', 'url("images/red-car.png")');
     e5--;
@@ -222,7 +216,6 @@ function enemies(){
     var pos1 = 8;
     var pos2 = e6;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}      
-    if($("#8-"+(e6)).css("background-color")=="red"){loseLife();}
     $("#8-"+(e6+1)).css('background-image',"");
     $("#8-"+(e6)).css('background-image', 'url("images/pink-car.png")');
     e6--;
@@ -236,7 +229,6 @@ function enemies(){
     var pos1 = 7;
     var pos2 = e7;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}      
-    if($("#7-"+(e7)).css("background-color")=="red"){loseLife();}
     $("#7-"+(e7+1)).css('background-image',"");
     $("#7-"+(e7)).css('background-image', 'url("images/blue-car.png")');
     e7--;
@@ -250,7 +242,6 @@ function enemies(){
     var pos1 = 4;
     var pos2 = e8;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    if($("#4-"+(e8)).css("background-color")=="red"){loseLife();}
     $("#4-"+(e8+1)).css('background-image',"");
     $("#4-"+(e8)).css('background-image', 'url("images/red-car.png")');
     e8--;
@@ -264,7 +255,6 @@ function enemies(){
     var pos1 = 3;
     var pos2 = e9;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    if($("#3-"+(e9)).css("background-color")=="red"){loseLife();}
     $("#3-"+(e9+1)).css('background-image',"");
     $("#3-"+(e9)).css('background-image', 'url("images/pink-car.png")');
     e9--;

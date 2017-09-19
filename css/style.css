@@ -20,11 +20,14 @@ td{
   background-size: 40px;
   background-repeat: no-repeat;
 }
+table{
+  position: relative;
+}
 
 #bgDiv{
 /*  display: table;
   margin: 0 auto;*/
-  position: fixed;
+  position: absolute;
   border: 1px solid black;
   z-index: -1;
 }
