@@ -1,24 +1,38 @@
+#title{
+  display: table;
+  margin: 0 auto;
+}
+
+#instructions{
+  display: table;
+  margin: 0 auto;
+  color : white;
+  background-color: #293342;
+  font-family:"Marker Felt";
+  letter-spacing: 2px;
+  width:660px;
+  border: 5px solid black;
+}
+
+#instructionsTitle{
+  display: table;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+#insList{
+  line-height: 50px;
+  font-size: 20px;
+}
+
 #everything{
-/*  display: table;
-  margin: 0 auto;*/
-  position: absolute;
+  display: table;
+  margin: 0 auto;
+/*  position: absolute;*/
   left:300px;
 }
-#instructions{
-  height:550px;
-  width:300px;
-  background-color: black;
-  display: inline-block;
-  padding: 0;
 
-}
-#instructions p{
-  font-size: 20px;
-  color: white;
-  padding-left: 5px;
-}
 #game{
-  /*position: abosolute*/
   border: 5px solid black;
   display: inline-block;
   
@@ -28,10 +42,6 @@ table tr td{
   width: 40px;
   z-index: 10;
   /*display:none;*/
-}
-h1{
-  display: table;
-  margin: 0 auto;
 }
 td{
   border: 1px solid transparent;

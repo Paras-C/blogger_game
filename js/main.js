@@ -17,7 +17,8 @@ var life = 3;
 
 $(function()
 {
-  play();
+   $("#everything").hide();
+  //play();
 });
 
 function play(){
@@ -104,7 +105,6 @@ function resetPrevSquare(){
   var t =""+currentPosC;
   $("#"+s+"-"+t).css("background-image","");
 }
-
 
 function drawGame(){
   var gWidth = 15;
