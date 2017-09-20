@@ -11,19 +11,23 @@ var e7=14;
 var e8=14;
 var e9=14;
 
+var ne1=0;
+var ne2=0;
+var ne3=0;
+var ne4=0;
+var ne5=0;
+
 var points = 0;
 
 var life = 3;
 
-$(function()
-{
-  // instructions();
-  //  $("#everything").hide();
-  // //game();
+$(function() {
   play();
+  enemies();
+
 });
 
-function game(){
+function game() {
   drawGame();
   characterInit();
   $("#scoreTitle").html("<p id='score'>Score: "+points+"</p>");
@@ -31,66 +35,52 @@ function game(){
     resetPrevSquare();
     var s = currentPosR;
     var t = currentPosC;
-    if(event.keyCode==38)//up
-    {
-        if(checkBorderR(currentPosR-1)){s = currentPosR-=1;}
-        if($("#"+s+"-"+t).css("background-image")=="none")
-        {
-          $("#"+s+"-"+t).css('background-image', 'url("images/forward.png")');
-        }
-        else
-        {
-          loseLife();
-        }
+    if(event.keyCode==38) {
+      // up
+      if(checkBorderR(currentPosR-1)){s = currentPosR-=1;}
+      if($("#"+s+"-"+t).css("background-image")=="none") {
+        $("#"+s+"-"+t).css('background-image', 'url("images/forward.png")');
+      } else {
+        loseLife();
+      }
+    } else if(event.keyCode==40) {
+      // down
+      if(checkBorderR(currentPosR+1)){s=currentPosR+=1;}
+
+      if($("#"+s+"-"+t).css("background-image")=="none") {        
+        $("#"+s+"-"+t).css('background-image', 'url("images/back.png")');
+      } else {
+        loseLife();
+      }      
+    } else if(event.keyCode==37) {
+      //left
+      if(checkBorderC(currentPosC-1)){t = currentPosC-=1;}
+
+      if($("#"+s+"-"+t).css("background-image")=="none") {
+        $("#"+s+"-"+t).css('background-image', 'url("images/left.png")');  
+      } else {
+        loseLife();
+      }
+    } else if(event.keyCode==39) {
+      //right
+      if(checkBorderC(currentPosC+1)){t = currentPosC+=1;}
+      if($("#"+s+"-"+t).css("background-image")=="none") {   
+        $("#"+s+"-"+t).css('background-image', 'url("images/right.png")');
+      } else {
+        loseLife();
+      }
     }
-    else if(event.keyCode==40)//down
-    {
-        if(checkBorderR(currentPosR+1)){s=currentPosR+=1;}
-        if($("#"+s+"-"+t).css("background-image")=="none")
-        {        
-          $("#"+s+"-"+t).css('background-image', 'url("images/back.png")');
-        }
-        else
-        {
-          loseLife();
-        }      
-    }
-    else if(event.keyCode==37)//left
-    {
-        if(checkBorderC(currentPosC-1)){t = currentPosC-=1;}
-        if($("#"+s+"-"+t).css("background-image")=="none")
-        {           
-          $("#"+s+"-"+t).css('background-image', 'url("images/left.png")');  
-        }
-        else
-        {
-          loseLife();
-        }
-    }
-    else if(event.keyCode==39)//right
-    {
-        if(checkBorderC(currentPosC+1)){t = currentPosC+=1;}
-        if($("#"+s+"-"+t).css("background-image")=="none")
-        {   
-          $("#"+s+"-"+t).css('background-image', 'url("images/right.png")');
-        }
-        else
-        {
-          loseLife();
-        }
-    }
-    else
-    {
-      $("#"+s+"-"+t).css('background-image', 'url("images/forward.png")');
-    }
-  if(checkWin())
-    {
+    if(checkWin()) {
       characterInit();
       points +=10;
       $("#score").html("Score: "+points);
+      if(points==10) 
+      {
+         addNewEnemies();
+      }
     } 
   });
-  enemies();
+
 }
 
 
@@ -100,7 +90,6 @@ function characterInit(){
   currentPosR=18;
   currentPosC=7;
 }
-
 
 function resetPrevSquare(){
   var s =""+currentPosR;
@@ -148,7 +137,7 @@ function checkBorderC(num){
 
 function enemies(){
   //Enemy 1
-  setInterval(function(){
+  enemy1Interval = setInterval(function(){
     var pos1 = 16;
     var pos2 = e1;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -162,7 +151,7 @@ function enemies(){
   },350);
 
   //Enemy 2
-    setInterval(function(){
+  setInterval(function(){
     var pos1 = 15;
     var pos2 = e2;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -175,7 +164,7 @@ function enemies(){
     }
   },250);
   //Enemy 3
-    setInterval(function(){
+  setInterval(function(){
     var pos1 = 14;
     var pos2 = e3;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -188,7 +177,7 @@ function enemies(){
     }
   },200);
   //Enemy 4
-    setInterval(function(){
+  setInterval(function(){
     var pos1 = 11;
     var pos2 = e4;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -201,7 +190,7 @@ function enemies(){
     }
   },150);
   //Enemy 5
-    setInterval(function(){
+  setInterval(function(){
     var pos1 = 9;
     var pos2 = e5;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -214,7 +203,7 @@ function enemies(){
     }
   },125);
   //Enemy 6
-    setInterval(function(){
+  setInterval(function(){
     var pos1 = 8;
     var pos2 = e6;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}      
@@ -227,7 +216,7 @@ function enemies(){
     }
   },100);
   //Enemy 7
-    setInterval(function(){
+  setInterval(function(){
     var pos1 = 7;
     var pos2 = e7;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}      
@@ -240,7 +229,7 @@ function enemies(){
     }
   },150);
   //Enemy 8
-    setInterval(function(){
+  setInterval(function(){
     var pos1 = 4;
     var pos2 = e8;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -253,7 +242,7 @@ function enemies(){
     }
   },50);
   //Enemy 9
-    setInterval(function(){
+  setInterval(function(){
     var pos1 = 3;
     var pos2 = e9;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -312,3 +301,109 @@ function play(){
     game();
   });
 }
+
+
+function createRightInterval () {
+  setInterval(function(){
+    var pos1 = 13;
+    var pos2 = ne1;
+    if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
+    $("#13-"+(ne1)).css('background-image',"");
+    $("#13-"+(ne1+1)).css('background-image', 'url("images/yellow-car.png")');
+    ne1++;
+    if(ne1>16)
+    {
+      ne1 = 0;
+    }
+  },350);
+
+setInterval(function(){
+    var pos1 = 12;
+    var pos2 = ne2;
+    if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
+    $("#12-"+(ne2)).css('background-image',"");
+    $("#12-"+(ne2+1)).css('background-image', 'url("images/yellow-car.png")');
+    ne2++;
+    if(ne2>16)
+    {
+      ne2 = 0;
+    }
+  },350);
+
+setInterval(function(){
+    var pos1 = 10;
+    var pos2 = ne3;
+    if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
+    $("#10-"+(ne3)).css('background-image',"");
+    $("#10-"+(ne3+1)).css('background-image', 'url("images/yellow-car.png")');
+    ne3++;
+    if(ne3>16)
+    {
+      ne3 = 0;
+    }
+  },350);
+
+setInterval(function(){
+    var pos1 = 6;
+    var pos2 = ne4;
+    if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
+    $("#12-"+(ne4)).css('background-image',"");
+    $("#12-"+(ne4+1)).css('background-image', 'url("images/yellow-car.png")');
+    ne4++;
+    if(ne4>16)
+    {
+      ne4 = 0;
+    }
+  },350);
+
+setInterval(function(){
+    var pos1 = 5;
+    var pos2 = ne5;
+    if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
+    $("#5-"+(ne5)).css('background-image',"");
+    $("#5-"+(ne5+1)).css('background-image', 'url("images/yellow-car.png")');
+    ne5++;
+    if(ne5>16)
+    {
+      ne5 = 0;
+    }
+  },350);
+
+}
+
+function addNewEnemies() {
+  $(".toBeChanged").removeClass("grass");
+  $(".toBeChanged").addClass("road");
+  createRightInterval();
+}
+
+  //   enemy1Interval = setInterval(function(){
+  //   var pos1 = 16;
+  //   var pos2 = e1;
+  //   if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
+  //   $("#16-"+(e1)).css('background-image',"");
+  //   $("#16-"+(e1+1)).css('background-image', 'url("images/red-car.png")');
+  //   e1++;
+  //   if(e1>16)
+  //   {
+  //     e1 = 0;
+  //   }
+  // },350);
+
+
+// function createRightInterval () {
+    // setInterval(function(){
+    //   var pos1 = pos1;
+    //   var pos2 = 0;
+    //   if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
+    //   $("#" + pos1 + "-" + (pos2)).css('background-image',"");
+    //   $("#" + pos1 + "-" + (pos2+1)).css('background-image', 'url("images/pink-car.png")');
+    //   pos2++;
+    //   if(pos2 > 16)
+    //   {
+    //     pos2 = 0;
+    //   }
+    // },200);
+// }
+
+
