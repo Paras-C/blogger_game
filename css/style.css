@@ -58,8 +58,8 @@ table tr td{
   height: 40px;
   width: 40px;
   z-index: 10;
-  /*display:none;*/
-}
+/*  display:none;
+*/}
 td{
   border: 1px solid transparent;
   padding: 0;
@@ -156,5 +156,26 @@ table{
   display: inline-block;
 }
 
+#gameOver{
+  display: table;
+  margin: 0 auto;
+  color : white;
+  background-color: #055126;
+  font-family:"Marker Felt";
+  letter-spacing: 2px;
+  width:660px;
+  border: 5px solid black;
+}
 
+#gameOver p{
+  display: table;
+  margin: 0 auto;
+  font-size: 50px;
+}
+
+#replayButton{
+    display: table;
+  margin: 0 auto;
+  font-size: 70px;
+}
 

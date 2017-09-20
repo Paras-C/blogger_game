@@ -272,8 +272,20 @@ function loseLife(){
 }
 
 function gameOver(){
-  alert("GAME OVER!!! \n" + "Final Score: " + points);
-  location.reload();
+  $("#everything").hide();
+  $("#gameOver").show();
+  $("#finalScore").html("Final Score: "+points);
+
+  $("#replayButton").on("mouseenter",function(){
+    $("#replayButton").css("color","gray");
+    $("#replayButton").css("cursor","pointer");
+  }).on("mouseleave",function(){
+    $("#replayButton").css("color","white");
+    $("#replayButton").css("cursor","default");
+  }).on("click",function(){
+    play();
+    $("#gameOver").show();
+  });
 }
 
 function checkWin(){
@@ -289,6 +301,7 @@ function checkWin(){
 
 function play(){
   $("#everything").hide();
+  $("#gameOver").hide();
   $("#playButton").on("mouseenter",function(){
     $("#playButton").css("color","gray");
     $("#playButton").css("cursor","pointer");
