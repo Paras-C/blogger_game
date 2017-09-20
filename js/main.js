@@ -273,7 +273,9 @@ function loseLife(){
 
 function gameOver(){
   $("#everything").hide();
+
   $("#gameOver").show();
+  
   $("#finalScore").html("Final Score: "+points);
 
   $("#replayButton").on("mouseenter",function(){
@@ -283,8 +285,14 @@ function gameOver(){
     $("#replayButton").css("color","white");
     $("#replayButton").css("cursor","default");
   }).on("click",function(){
-    play();
-    $("#gameOver").show();
+    $("#gameOver").hide();
+    points = 0;
+    life = 3;
+    $("#score").html("Score: "+points);
+    $("#everything").show();
+    $("#heart1").show();
+    $("#heart2").show();
+    $("#heart3").show();
   });
 }
 
