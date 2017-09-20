@@ -17,11 +17,13 @@ var life = 3;
 
 $(function()
 {
-   $("#everything").hide();
-  //play();
+  // instructions();
+  //  $("#everything").hide();
+  // //game();
+  play();
 });
 
-function play(){
+function game(){
   drawGame();
   characterInit();
   $("#scoreTitle").html("<p id='score'>Score: "+points+"</p>");
@@ -296,3 +298,17 @@ function checkWin(){
   }
 }
 
+function play(){
+  $("#everything").hide();
+  $("#playButton").on("mouseenter",function(){
+    $("#playButton").css("color","gray");
+    $("#playButton").css("cursor","pointer");
+  }).on("mouseleave",function(){
+    $("#playButton").css("color","white");
+    $("#playButton").css("cursor","default");
+  }).on("click",function(){
+    $("#instructions").hide();
+    $("#everything").show();
+    game();
+  });
+}

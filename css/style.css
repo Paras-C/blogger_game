@@ -7,7 +7,7 @@
   display: table;
   margin: 0 auto;
   color : white;
-  background-color: #293342;
+  background-color: #055126;
   font-family:"Marker Felt";
   letter-spacing: 2px;
   width:660px;
@@ -21,8 +21,23 @@
 }
 
 #insList{
-  line-height: 50px;
+  line-height: 30px;
   font-size: 20px;
+}
+
+#playButton{
+  display: table;
+  margin: 0 auto;
+  font-size: 70px;
+}
+
+#backStory{
+  display: table;
+  margin: 0 auto;
+  line-height: 30px;
+  font-size: 25px;
+  padding-left: 5px;
+  text-align: center;
 }
 
 #everything{
@@ -30,6 +45,8 @@
   margin: 0 auto;
 /*  position: absolute;*/
   left:300px;
+  font-family:"Marker Felt";
+  letter-spacing: 2px;
 }
 
 #game{
