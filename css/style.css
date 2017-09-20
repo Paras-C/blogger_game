@@ -57,8 +57,8 @@
 table tr td{
   height: 40px;
   width: 40px;
-/*  z-index: 10;
-  display:none;*/
+  z-index: 10;
+  /*display:none;*/
 }
 td{
   border: 1px solid transparent;

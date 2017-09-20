@@ -74,7 +74,7 @@ function game() {
       characterInit();
       points +=10;
       $("#score").html("Score: "+points);
-      if(points==10) 
+      if(points==30) 
       {
          addNewEnemies();
       }
@@ -303,7 +303,7 @@ function play(){
 }
 
 
-function createRightInterval () {
+function createNew(){
   setInterval(function(){
     var pos1 = 13;
     var pos2 = ne1;
@@ -315,9 +315,9 @@ function createRightInterval () {
     {
       ne1 = 0;
     }
-  },350);
+  },100);
 
-setInterval(function(){
+  setInterval(function(){
     var pos1 = 12;
     var pos2 = ne2;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -328,9 +328,9 @@ setInterval(function(){
     {
       ne2 = 0;
     }
-  },350);
+  },90);
 
-setInterval(function(){
+  setInterval(function(){
     var pos1 = 10;
     var pos2 = ne3;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -341,22 +341,22 @@ setInterval(function(){
     {
       ne3 = 0;
     }
-  },350);
+  },140);
 
-setInterval(function(){
+  setInterval(function(){
     var pos1 = 6;
     var pos2 = ne4;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-    $("#12-"+(ne4)).css('background-image',"");
-    $("#12-"+(ne4+1)).css('background-image', 'url("images/yellow-car.png")');
+    $("#6-"+(ne4)).css('background-image',"");
+    $("#6-"+(ne4+1)).css('background-image', 'url("images/yellow-car.png")');
     ne4++;
     if(ne4>16)
     {
       ne4 = 0;
     }
-  },350);
+  },70);
 
-setInterval(function(){
+  setInterval(function(){
     var pos1 = 5;
     var pos2 = ne5;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -367,14 +367,14 @@ setInterval(function(){
     {
       ne5 = 0;
     }
-  },350);
+  },100);
 
 }
 
 function addNewEnemies() {
   $(".toBeChanged").removeClass("grass");
   $(".toBeChanged").addClass("road");
-  createRightInterval();
+  createNew();
 }
 
   //   enemy1Interval = setInterval(function(){
