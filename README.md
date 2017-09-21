@@ -9,7 +9,8 @@ written using HTML, CSS, and JavaScript. This was completed as part of my Sparta
 ```
 git clone git@github.com:Paras-C/blogger_game.git
 ```  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Into your terminal.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Into your terminal.    
+
 2. Then either type:  
 ```
 open index.html
