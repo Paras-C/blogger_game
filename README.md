@@ -41,4 +41,17 @@ These can also be found within the game.
 8. Good Luck!
 
 
-##Game Shots
+##Screenshots
+Screen Shots of each view within the game.
+
+###Instructions
+![Instructions Page](https://raw.githubusercontent.com/Paras-C/blogger_game/master/images/instruction_screen.png)
+
+###Game Screen
+![Main Game](https://raw.githubusercontent.com/Paras-C/blogger_game/master/images/game_screen.png)
+
+###Game Screen (Hard Mode)
+![Hard Mode Game](https://raw.githubusercontent.com/Paras-C/blogger_game/master/images/hardgame_screen.png)
+
+###Game Over
+![Game Over](https://raw.githubusercontent.com/Paras-C/blogger_game/master/images/gameover_screen.png)
