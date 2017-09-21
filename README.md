@@ -9,12 +9,12 @@ written using HTML, CSS, and JavaScript. This was completed as part of my Sparta
 ```
 git clone git@github.com:Paras-C/blogger_game.git
 ```  
-Into your terminal.  
+  Into your terminal.  
 2. Then either type:  
 ```
 open index.html
 ```  
-Into your terminal
+  Into your terminal
 or simply, locate the file manually and right-click the index.html, opening it with your browser.  
 
 3. Alternatively, Click: <https://paras-c.github.io/blogger_game/> for the online hosted version of the game.  
