@@ -17,7 +17,7 @@ open index.html
 Into your terminal
 or simply, locate the file manually and right-click the index.html, opening it with your browser.  
 
-3. Alternatively, Click: [https://paras-c.github.io/blogger_game/]
+3. Alternatively, Click: <https://paras-c.github.io/blogger_game/> for the online hosted version of the game.
 
 4. Follow the Instructions on screen or below and press the play button when you are ready to begin.
 
