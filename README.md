@@ -15,7 +15,7 @@ git clone git@github.com:Paras-C/blogger_game.git
 open index.html
 ```  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Into your terminal
-or simply, locate the file manually and right-click the index.html, opening it &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with your browser.  
+or simply, locate the file manually and right-click the index.html, opening it with your browser.  
 
 3. Alternatively, Click: <https://paras-c.github.io/blogger_game/> for the online hosted version of the game.  
 
