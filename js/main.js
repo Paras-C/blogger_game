@@ -1,6 +1,8 @@
+//Current Co-ords for the characters position within the table
 var currentPosR;
 var currentPosC;
 
+//Starting positions of original enemies
 var e1=14;
 var e2=14;
 var e3=14;
@@ -11,22 +13,29 @@ var e7=14;
 var e8=14;
 var e9=14;
 
+//Starting positions of the new enemies
 var ne1=0;
 var ne2=0;
 var ne3=0;
 var ne4=0;
 var ne5=0;
 
+//Variables for the intervals for the hard cars
+var newint1;
+var newint2;
+var newint3;
+var newint4;
+var newint5;
+//Current points of the current game
 var points = 0;
-
+//Current number of lives of the character
 var life = 3;
 
-$(function() {
+$(function(){
   play();
   enemies();
-
 });
-
+//Set-up code which initialises the game screen, character and movements etc
 function game() {
   drawGame();
   characterInit();
@@ -76,27 +85,22 @@ function game() {
       $("#score").html("Score: "+points);
       if(points==30) 
       {
-         addNewEnemies();
-      }
-    } 
-  });
-
+       addNewEnemies();
+     }
+   } 
+ });
 }
-
-
 function characterInit(){
   $("#1-7").css('background-image',"");
   $("#18-7").css('background-image', 'url("images/forward.png")');
   currentPosR=18;
   currentPosC=7;
 }
-
 function resetPrevSquare(){
   var s =""+currentPosR;
   var t =""+currentPosC;
   $("#"+s+"-"+t).css("background-image","");
 }
-
 function drawGame(){
   var gWidth = 15;
   var gLength = 19;
@@ -112,7 +116,7 @@ function drawGame(){
   }
   $("#gameBoard").html(boardstr);
 }
-
+//Checks the border to ensure the character cannot move away from the screen Horizontally
 function checkBorderR(num){
   if(num<19&&num>=0)
   {
@@ -123,7 +127,7 @@ function checkBorderR(num){
     return false;
   }
 }
-
+//Checks the border to ensure the character cannot move away from the screen Vertically
 function checkBorderC(num){
   if(num<15&&num>=0)
   {
@@ -134,7 +138,7 @@ function checkBorderC(num){
     return false;
   }
 }
-
+//Spawns the Original Enemies on the screen
 function enemies(){
   //Enemy 1
   enemy1Interval = setInterval(function(){
@@ -255,7 +259,6 @@ function enemies(){
     }
   },130);
 }
-
 function loseLife(){
   characterInit();
   life-=1
@@ -270,7 +273,7 @@ function loseLife(){
     gameOver();
   }
 }
-
+//Handles the proccess of game over
 function gameOver(){
   $("#everything").hide();
 
@@ -293,9 +296,9 @@ function gameOver(){
     $("#heart1").show();
     $("#heart2").show();
     $("#heart3").show();
+    removeNewEnemies();
   });
 }
-
 function checkWin(){
   if(currentPosR===1&&currentPosC===7)
   {
@@ -306,7 +309,7 @@ function checkWin(){
     return false;
   }
 }
-
+//Initial play button code, located on the Instructions page
 function play(){
   $("#everything").hide();
   $("#gameOver").hide();
@@ -322,10 +325,9 @@ function play(){
     game();
   });
 }
-
-
+//Code which creates new enemies
 function createNew(){
-  setInterval(function(){
+  newint1 = setInterval(function(){
     var pos1 = 13;
     var pos2 = ne1;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -338,7 +340,7 @@ function createNew(){
     }
   },100);
 
-  setInterval(function(){
+  newint2 = setInterval(function(){
     var pos1 = 12;
     var pos2 = ne2;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -351,7 +353,7 @@ function createNew(){
     }
   },90);
 
-  setInterval(function(){
+  newint3 = setInterval(function(){
     var pos1 = 10;
     var pos2 = ne3;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -364,7 +366,7 @@ function createNew(){
     }
   },140);
 
-  setInterval(function(){
+  newint4 = setInterval(function(){
     var pos1 = 6;
     var pos2 = ne4;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -377,7 +379,7 @@ function createNew(){
     }
   },70);
 
-  setInterval(function(){
+  newint5 = setInterval(function(){
     var pos1 = 5;
     var pos2 = ne5;
     if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
@@ -389,27 +391,31 @@ function createNew(){
       ne5 = 0;
     }
   },100);
-
 }
-
+//Adds the new enemies to the game screen
 function addNewEnemies() {
   $(".toBeChanged").removeClass("grass");
   $(".toBeChanged").addClass("road");
   createNew();
 }
-
-  //   enemy1Interval = setInterval(function(){
-  //   var pos1 = 16;
-  //   var pos2 = e1;
-  //   if(currentPosR==pos1&&currentPosC==pos2){loseLife();}
-  //   $("#16-"+(e1)).css('background-image',"");
-  //   $("#16-"+(e1+1)).css('background-image', 'url("images/red-car.png")');
-  //   e1++;
-  //   if(e1>16)
-  //   {
-  //     e1 = 0;
-  //   }
-  // },350);
+//Removal of enemies which occurs upon game over
+function removeNewEnemies(){
+  $(".toBeChanged").removeClass("road");
+  $(".toBeChanged").addClass("grass");
+  clearInterval(newint1);
+  clearInterval(newint2);
+  clearInterval(newint3);
+  clearInterval(newint4);
+  clearInterval(newint5);
+  for(var i = 0; i < 15;i++)
+  {
+    $("#13-"+i).css('background-image',"");
+    $("#12-"+i).css('background-image',"");
+    $("#10-"+i).css('background-image',"");
+    $("#6-"+i).css('background-image',"");
+    $("#5-"+i).css('background-image',"");
+  }
+}
 
 
 // function createRightInterval () {

@@ -1,3 +1,9 @@
+body{
+  background-image: url("../images/grey-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 #title{
   display: table;
   margin: 0 auto;
@@ -11,7 +17,7 @@
   font-family:"Marker Felt";
   letter-spacing: 2px;
   width:660px;
-  border: 5px solid black;
+  border: 5px solid white;
 }
 
 #instructionsTitle{
@@ -29,6 +35,9 @@
   display: table;
   margin: 0 auto;
   font-size: 70px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #backStory{
@@ -43,14 +52,14 @@
 #everything{
   display: table;
   margin: 0 auto;
-/*  position: absolute;*/
+  /*  position: absolute;*/
   left:300px;
   font-family:"Marker Felt";
   letter-spacing: 2px;
 }
 
 #game{
-  border: 5px solid black;
+  border: 5px solid white;
   display: inline-block;
   
 }
@@ -65,7 +74,7 @@ td{
   padding: 0;
   background-size: 40px;
   background-repeat: no-repeat;
-/*  border: 1px solid black;*/
+  /*  border: 1px solid black;*/
 
 }
 table{
@@ -74,10 +83,10 @@ table{
 
 #bgDiv{
 /*  display: table;
-  margin: 0 auto;*/
-  position: absolute;
-  border: 1px solid black;
-  z-index: -1;
+margin: 0 auto;*/
+position: absolute;
+border: 1px solid black;
+z-index: -1;
 }
 .size1{
   height: 44px;
@@ -164,7 +173,8 @@ table{
   font-family:"Marker Felt";
   letter-spacing: 2px;
   width:660px;
-  border: 5px solid black;
+  height: 836px;
+  border: 5px solid white;
 }
 
 #gameOver p{
@@ -174,8 +184,11 @@ table{
 }
 
 #replayButton{
-    display: table;
+  display: table;
   margin: 0 auto;
   font-size: 70px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
