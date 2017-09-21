@@ -79,6 +79,10 @@ function game() {
         loseLife();
       }
     }
+    else
+    {
+      $("#"+s+"-"+t).css('background-image', 'url("images/forward.png")');
+    }
     if(checkWin()) {
       characterInit();
       points +=10;
